@@ -1,0 +1,14 @@
+<div class="row" infinite-scroll (scrolled)="onScrollDown()">
+  <div class="col-xs-12 col-sm-6 col-md-4" *ngFor="let character of characters">
+    <character-card [character]="character"></character-card>
+  </div>
+  <div
+    class="col-xs-12 col-sm-6 col-md-12 mt-5 container-notfound"
+    *ngIf="characters.length <= 0"
+  >
+    <p>No hay resultados....</p>
+  </div>
+</div>
+<button class="btn btn-dark" *ngIf="showButton" (click)="onScrollTop()">
+  Subir
+</button>
